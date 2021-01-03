@@ -15,6 +15,10 @@ if exists('g:loaded_syntastic_vala_valac_checker')
 endif
 let g:loaded_syntastic_vala_valac_checker = 1
 
+if !get(g:, 'vala_syntastic_enabled', 1)
+    finish
+endif
+
 let s:save_cpo = &cpo
 set cpo&vim
 

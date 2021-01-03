@@ -59,6 +59,11 @@ However, I thought it would be useful to be able to specify which files should b
 
 Note that passing files like this, while convenient, is suboptimal, since their location is relative to the current working path.
 
+You can disable the feature in your `.vimrc`:
+``` vim
+let vala_syntastic_enabled = 0
+```
+
 ## Snippets
 
 Useful snippets with [UltiSnips][ultisnips]:

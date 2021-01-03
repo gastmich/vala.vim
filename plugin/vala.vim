@@ -12,14 +12,16 @@ set cpoptions&vim
 " This is to let Syntastic know about the Vala filetype.
 " It enables tab completion for the 'SyntasticInfo' command.
 " (This does not actually register the syntax checker.)
-if exists('g:syntastic_extra_filetypes')
-    call add(g:syntastic_extra_filetypes, 'vala')
-else
-    let g:syntastic_extra_filetypes = ['vala']
-endif
+if get(g:, 'vala_syntastic_enabled', 1)
+    if exists('g:syntastic_extra_filetypes')
+        call add(g:syntastic_extra_filetypes, 'vala')
+    else
+        let g:syntastic_extra_filetypes = ['vala']
+    endif
 
-if !exists('g:systastic_vala_checkers')
-    let g:syntastic_vala_checkers = ['valac']
+    if !exists('g:systastic_vala_checkers')
+        let g:syntastic_vala_checkers = ['valac']
+    endif
 endif
 
 let &cpoptions = s:save_cpo
